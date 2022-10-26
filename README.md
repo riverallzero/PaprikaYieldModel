@@ -44,4 +44,8 @@ XGBoost, Linear Regression를 이용한 최적 주차 선정 및 모델링
 - 품종기준 농가별 생산량 비교 stripplot
 <img src="https://user-images.githubusercontent.com/93754504/197729489-bab245ed-9250-489f-898a-5fa7ba0aa2f2.png" width="800px">
 
+### 4_Feature_importance
+- 모델별 변수 중요도를 Stack형식 barplot(환경, 생육 데이터 분리해 비교)
+<img src="https://user-images.githubusercontent.com/93754504/197994709-bed44357-a0d4-4e23-b55f-ebd27440f2cf.png" width="800px">
+
 ## 결론
