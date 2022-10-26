@@ -47,7 +47,7 @@ def model_training(filename):
         cor = "red"
     else:
         cul = "황색계"
-        cor = "gold"
+        cor = "goldenrod"
 
     model = XGBRegressor()
 
@@ -60,41 +60,43 @@ def model_training(filename):
     mae = mean_absolute_error(prediction, y_test)
     r2 = r2_score(prediction, y_test)
 
-#     plt.figure(figsize=(6, 6))
-#     plt.scatter(prediction, y_test, alpha=0.6, color=cor)
-#
-#     if max(prediction) >= max(y_test):
-#         plt.plot([0, max(prediction)], [0, max(prediction)], color="black", linestyle="--")
-#     else:
-#         plt.plot([0, max(y_test)], [0, max(y_test)], color="black", linestyle="--")
-#
-#     size = 18
-#     params = {
-#         'axes.labelsize': size * 1.5,
-#         'axes.titlesize': size * 1.2,
-#     }
-#     plt.rcParams.update(params)
-#
-#     plt.title(cul)
-#     plt.xlabel("Predict Value", fontsize=15)
-#     plt.ylabel("Real Value", fontsize=15)
-#     plt.tight_layout()
-#     plt.savefig(os.path.join(output_dir, f"{cul}.png"), dpi=600)
+    plt.figure(figsize=(6, 6))
+    plt.scatter(prediction, y_test, alpha=0.6, color=cor)
 
-    # shap
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(X_test)
-    shap.summary_plot(shap_values, X_test, show=False)
-    plt.savefig(os.path.join(output_dir, f"{cul}_shap.png"), dpi=600)
+    if max(prediction) >= max(y_test):
+        plt.plot([0, max(prediction)], [0, max(prediction)], color="black", linestyle="--")
+    else:
+        plt.plot([0, max(y_test)], [0, max(y_test)], color="black", linestyle="--")
+
+    size = 18
+    params = {
+        'axes.labelsize': size * 1.5,
+        'axes.titlesize': size * 1.2,
+    }
+    plt.rcParams.update(params)
+
+    plt.title(f"{cul} (MAE: {mae:.2f} | R2: {r2:.2f})")
+    plt.xlabel("Predict Value", fontsize=15)
+    plt.ylabel("Real Value", fontsize=15)
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, f"{cul}.png"), dpi=600)
+
+    # save to csv
+    feature_importance = pd.DataFrame(model.feature_importances_.reshape((1, -1)), columns=X_train.columns, index=['feature_importance'])
+    feature_importance = feature_importance.transpose()
+    namelist = X_train.columns
+    df = feature_importance.sort_values('feature_importance', ascending=False)
+    df.insert(0, 'item', namelist)
+    df.to_csv(os.path.join(output_dir, f'{cul}_xgb_importance.csv'), index=False, encoding='utf-8-sig')
 
     return "R2: {:.2f} , MAE: {:.2f}".format(r2, mae)
 
 
 def main():
     filename = [
-        f"../Output/Data/FinalData/Week15/paprika(Orange).csv",
-        f"../Output/Data/FinalData/Week15/paprika(Red).csv",
-        f"../Output/Data/FinalData/Week16/paprika(Yellow).csv"
+        f"../Output/Data/FinalData/Week16/paprika(Orange).csv",
+        f"../Output/Data/FinalData/Week14/paprika(Red).csv",
+        f"../Output/Data/FinalData/Week10/paprika(Yellow).csv"
     ]
 
     for f in filename:
