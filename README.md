@@ -46,6 +46,7 @@ XGBoost, Linear Regression를 이용한 최적 주차 선정 및 모델링
 
 ### 4_Feature_importance
 - 모델별 변수 중요도를 Stack형식 barplot(환경, 생육 데이터 분리해 비교)
-<img src="https://user-images.githubusercontent.com/93754504/197994709-bed44357-a0d4-4e23-b55f-ebd27440f2cf.png" width="800px">
+<img src="https://user-images.githubusercontent.com/93754504/198185655-ce995b4a-5dcf-45ca-a01a-aa710533d8d9.png" width="800px">
+<img src="https://user-images.githubusercontent.com/93754504/198185668-3b202f87-0408-4ad7-8379-82c3e48a70e9.png" width="800px">
 
 ## 결론
