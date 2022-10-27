@@ -35,10 +35,10 @@ XGBoost, Linear Regression를 이용한 최적 주차 선정 및 모델링
 
 - 모델 결과 
   * <strong>XGBoost</strong> | <a href="https://github.com/riverallzero/Paprika_model/blob/main/2_Model/XGB_model.py">XGB_model.py</a>
-  <img src="https://user-images.githubusercontent.com/93754504/197727270-32856ca4-9c8c-43c5-855f-792b6c7daaa3.png" width="800px">
+  <img src="https://user-images.githubusercontent.com/93754504/198185825-5596b138-585b-4135-bb7c-a660555c4d05.png" width="800px">
 
   * <strong>Linear Regression</strong> | <a href="https://github.com/riverallzero/Paprika_model/blob/main/2_Model/linear_model.py">linear_model.py</a>
-  <img src="https://user-images.githubusercontent.com/93754504/197727641-d97d7a7c-295b-4e34-969c-60d7919d7cf1.png" width="800px">
+  <img src="https://user-images.githubusercontent.com/93754504/198185872-c64c18c8-d954-499f-bf70-dae4f8db6bc8.png" width="800px">
 
 ### 3_EDA
 - 품종기준 농가별 생산량 비교 stripplot
