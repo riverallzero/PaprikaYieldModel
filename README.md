@@ -28,10 +28,10 @@
 XGBoost, Linear Regression를 이용한 최적 주차 선정 및 모델링
 - 최적 주차 선정
     * XGBoost
-    <img src="https://user-images.githubusercontent.com/93754504/197727972-f98759ff-6aad-46d9-b429-2c0a71a853bd.png" width="300px">
-    
+    <img src="https://user-images.githubusercontent.com/93754504/199156130-855b187e-8346-4a81-8dba-f23440db32a6.png" width="700px">
+
     * Linear Regression
-    <img src="https://user-images.githubusercontent.com/93754504/197728154-dcf7de40-cc72-4911-ad79-9294271d599c.png" width="300px">
+    <img src="https://user-images.githubusercontent.com/93754504/199156139-96b04c3b-a239-42da-811b-7454c6c4ad52.png" width="700px">
 
 - 모델 결과 
   * <strong>XGBoost</strong> | <a href="https://github.com/riverallzero/Paprika_model/blob/main/2_Model/XGB_model.py">XGB_model.py</a>
@@ -46,7 +46,8 @@ XGBoost, Linear Regression를 이용한 최적 주차 선정 및 모델링
 
 ### 4_Feature_importance
 - 모델별 변수 중요도를 Stack형식 barplot(환경, 생육 데이터 분리해 비교)
-<img src="https://user-images.githubusercontent.com/93754504/198185655-ce995b4a-5dcf-45ca-a01a-aa710533d8d9.png" width="800px">
-<img src="https://user-images.githubusercontent.com/93754504/198500825-39ad9aab-4805-40f7-90e4-5f9e26cd6ec4.png" width="800px">
+<img src="https://user-images.githubusercontent.com/93754504/199156201-c596ead7-079b-46d8-9110-bbf7386ec422.png" width="800px">
+<img src="https://user-images.githubusercontent.com/93754504/199156206-426125a3-d44a-4aea-9f9f-cb732d7f1ef6.png" width="800px">
 
 ## 결론
+품종별 생산량 예측 모델의 최적주차를 살펴본 바, 3~4개월동안 주간 관측데이터를 활용한 모델이 가장 성능이 좋은 것을 확인했다. 최적주간을 적용한 XGBoost모델은 R2 0.6이상, MAE 0.95이하의 평가지표를 보였다. 품종별로는 주황색계열 모델이 가장 좋은 성능을 보였는데, 이는 주황색계열 농가수가 적어 수집된 데이터의 일관성이 높았기 때문으로 풀이된다. 분석에 사용된 입력자료 중 상당기간 누락된 자료는 분석에서 제외함으로써, 전체 조사항목 중 많은 자료가 분석에 활용되지 못한 부분이 본 연구의 한계로 사료된다. 한편 본 연구에서 최적모델로 15주동안의 자료와 17개의 조사항목을 활용했던 점에서 현장에 직접적으로 적용하기에는 제한적이다. 향후 연구에서 차원축소, 주요인자를 활용한 간소화 모델을 개발함으로써 생산량 예측 모델의 적용성을 향상시킬 필요가 있다. 
